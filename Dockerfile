@@ -10,6 +10,7 @@ RUN npm run build -- --configuration=development
 
 # ---- Run Stage ----
 FROM nginx:alpine
-COPY --from=build /app/dist/gsrt-app /usr/share/nginx/html
+COPY --from=build /app/dist/gsrt-app/browser /usr/share/nginx/html
 EXPOSE 8089
+RUN ls -la /app/dist/gsrt-app
 CMD ["nginx", "-g", "daemon off;"]
