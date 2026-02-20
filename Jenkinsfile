@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh """
                     docker rm -f ${CONTAINER_NAME} || true
-                    docker run -d -p 8089:8089 --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}
+                    docker run -d -p 8089:80 --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}
                 """
             }
         }
