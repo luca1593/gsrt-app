@@ -7,7 +7,7 @@ RUN npm ci
 
 COPY . .
 RUN npm run build -- --configuration=production
-RUN ls -la /app/dist
+RUN ls -R /app/dist
 
 # ---- Run Stage ----
 FROM nginx:alpine
