@@ -6,11 +6,11 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build -- --configuration=pre-prod
+RUN npm run build -- --configuration=production
 RUN ls -R /app/dist
 
 # ---- Run Stage ----
 FROM nginx:alpine
 COPY --from=build /app/dist/gsrt-app/browser /usr/share/nginx/html
-EXPOSE 8091
+EXPOSE 8090
 CMD ["nginx", "-g", "daemon off;"]

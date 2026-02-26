@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "grst-app-pre-prod"
-        IMAGE_TAG = "pre-prod"
-        CONTAINER_NAME = "grst-app-pre-prod"
+        IMAGE_NAME = "grst-app-prod"
+        IMAGE_TAG = "prod"
+        CONTAINER_NAME = "grst-app-prod"
     }
 
     stages {
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh """
                     docker rm -f ${CONTAINER_NAME} || true
-                    docker run -d -p 8091:83 --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}
+                    docker run -d -p 8090:85 --name ${CONTAINER_NAME} ${IMAGE_NAME}:${IMAGE_TAG}
                 """
             }
         }
