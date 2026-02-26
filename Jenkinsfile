@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "grst-app-dev"
-        IMAGE_TAG = "dev"
-        CONTAINER_NAME = "grst-app-dev"
+        IMAGE_NAME = "grst-app-pre-prod"
+        IMAGE_TAG = "pre-prod"
+        CONTAINER_NAME = "grst-app-pre-prod"
     }
 
     stages {
