@@ -63,6 +63,9 @@
             "production": {
               "buildTarget": "gsrt-app:build:production"
             },
+            "pre-prod": {
+              "buildTarget": "gsrt-app:build:pre-prod"
+            },
             "development": {
               "buildTarget": "gsrt-app:build:development"
             }
