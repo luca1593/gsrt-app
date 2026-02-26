@@ -12,5 +12,5 @@ RUN ls -la /app/dist
 # ---- Run Stage ----
 FROM nginx:alpine
 COPY --from=build /app/dist/gsrt-app/browser /usr/share/nginx/html
-EXPOSE 8089
+EXPOSE 8091
 CMD ["nginx", "-g", "daemon off;"]
